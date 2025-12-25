@@ -1,9 +1,10 @@
-import { getSheet } from "./getSheet";
+import { Entry } from "./Entry";
+import { getRows } from "./getRows";
 
 export async function getBySlug(slug: string) {
-  const filtered = [];
+  const filtered: Entry[] = [];
 
-  const rows = await getSheet();
+  const rows = await getRows();
   if (!rows) {
     return [];
   }
@@ -11,7 +12,7 @@ export async function getBySlug(slug: string) {
     const row = rows[i];
     if (row[0] === slug) {
       filtered.push({
-        id: slug,
+        slug,
         name: row[1],
         range: `D${i + 1}`,
         line: `${i + 1}`,
