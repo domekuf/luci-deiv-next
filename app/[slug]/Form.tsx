@@ -1,4 +1,5 @@
 "use client";
+import { Text } from "@/components/Text";
 
 import { Entry } from "@/lib/Entry";
 
@@ -20,7 +21,8 @@ export const Form = ({
           e.currentTarget.form?.requestSubmit();
         }}
       />
-      {entry.name}
+
+      <Text variant="script">{entry.name}</Text>
     </label>
   </form>
 );

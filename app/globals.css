@@ -1,26 +1,66 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* =========================
+   DESIGN TOKENS
+   ========================= */
+@theme {
+  --color-primary: #8fa96b;
+  --color-primary-light: #b7c89a;
+  --color-gold: #c8b26a;
+  --color-background: #fafbf8;
+  --color-text: #3a3a3a;
+
+  --font-script: "Allura", cursive;
+  --font-serif: "Cormorant Garamond", serif;
+
+  --spacing-section: 5rem;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* =========================
+   BASE STYLES
+   ========================= */
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-serif);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* =========================
+   TYPOGRAPHY DEFAULTS
+   ========================= */
+h1,
+h2,
+h3 {
+  font-family: var(--font-script);
+  color: var(--color-primary);
+}
+
+p {
+  line-height: 1.7;
+  letter-spacing: 0.02em;
+}
+
+/* =========================
+   LINKS
+   ========================= */
+a {
+  color: var(--color-primary);
+  text-underline-offset: 4px;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   SELECTION (DETAIL)
+   ========================= */
+::selection {
+  background-color: var(--color-primary-light);
+  color: white;
 }
